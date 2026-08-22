@@ -1,7 +1,7 @@
 package net.lordjayda.erstemod.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.lordjayda.erstemod.item.Moditems;
+import net.lordjayda.erstemod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -130,19 +130,19 @@ public class CuttingBoard extends HorizontalDirectionalBlock {
     @Override
     protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         ItemStack stack = player.getItemInHand(hand);
-        if (stack.is(Moditems.Tomate)){ itemStack.shrink(1);
-            player.addItem(new ItemStack(Moditems.tomaten_scheibe, 4));
+        if (stack.is(ModItems.TOMATO)){ itemStack.shrink(1);
+            player.addItem(new ItemStack(ModItems.TOMATO_SLICE, 4));
         }
-        if (stack.is(Moditems.lettucehead)){ itemStack.shrink(1);
-        player.addItem(new ItemStack(Moditems.lettuce, 4));
+        if (stack.is(ModItems.LETTUCE_HEAD)){ itemStack.shrink(1);
+        player.addItem(new ItemStack(ModItems.LETTUCE, 4));
         }
-        if (stack.is(Moditems.Bun)){ itemStack.shrink(1);
-            player.addItem( new ItemStack(Moditems.top_Bun, 1));
-            player.addItem(new ItemStack(Moditems.bottom_Bun, 1));
+        if (stack.is(ModItems.BUN)){ itemStack.shrink(1);
+            player.addItem( new ItemStack(ModItems.TOP_BUN, 1));
+            player.addItem(new ItemStack(ModItems.BOTTOM_BUN, 1));
         }
         if (stack.is(Items.BEEF)) {
             itemStack.shrink(1);
-            player.addItem(new ItemStack(Moditems.raw_patty,1));
+            player.addItem(new ItemStack(ModItems.RAW_PATTY,1));
         }
         return InteractionResult.SUCCESS;
     }
